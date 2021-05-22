@@ -25,7 +25,7 @@ class Page {
     lastEditedTime = json['last_edited_time'];
     parent = Parent.fromJson(json['parent']);
     archived = json['archived'];
-    properties = Properties.fromJson(json['properties']);
+    properties = Properties.fromJson(json['properties'], isQuery: true);
   }
 
   Map<String, dynamic> toJson() {
@@ -69,23 +69,6 @@ class Parent {
     data['workspace'] = workspace;
     data['page_id'] = pageId;
     data['database_id'] = databaseId;
-    return data;
-  }
-}
-
-class Properties {
-  late RichTexts title;
-
-  Properties({required this.title});
-
-  Properties.fromJson(Map<String, dynamic> json) {
-    title = RichTexts.fromTextList(json['title']['title']);
-  }
-
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['title'] = title;
-
     return data;
   }
 }

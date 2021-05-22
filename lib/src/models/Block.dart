@@ -32,7 +32,6 @@ class Block {
       this.childPage});
 
   Block.fromJson(Map<String, dynamic> json) {
-    log.info("Building Block with ID: $json['id']");
     object = json['object'];
     id = json['id'];
     createdTime = json['created_time'];

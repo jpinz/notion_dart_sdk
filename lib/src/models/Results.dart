@@ -1,14 +1,17 @@
-import 'Block.dart';
+import 'package:notion_sdk/src/models/Block.dart';
+import 'package:notion_sdk/src/models/Page.dart';
 
 class Results {
   String object = 'list';
   List<Block>? block = <Block>[];
+  List<Page>? page = <Page>[];
   String? nextCursor;
   bool hasMore = false;
 
   Results(
       {this.object = 'list',
       this.block,
+      this.page,
       this.nextCursor,
       this.hasMore = false});
 
@@ -16,7 +19,12 @@ class Results {
     object = json['object'];
     if (json['results'] != null) {
       json['results'].forEach((v) {
-        block!.add(Block.fromJson(v));
+        if (v['object'] == 'block') {
+          block!.add(Block.fromJson(v));
+        }
+        if (v['object'] == 'page') {
+          page!.add(Page.fromJson(v));
+        }
       });
     }
     nextCursor = json['next_cursor'];
