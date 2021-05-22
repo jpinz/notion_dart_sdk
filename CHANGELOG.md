@@ -1,4 +1,9 @@
 <!-- markdownlint-disable -->
+## 0.1.1
+
+- Fix the Page API and Page object
+- Removed dependency on `logging`
+  
 ## 0.1.0
 
 - Initial version.

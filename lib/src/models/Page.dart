@@ -1,3 +1,5 @@
+import 'package:notion_sdk/notion_sdk.dart';
+
 class Page {
   String object = 'page';
   late String id;
@@ -72,12 +74,12 @@ class Parent {
 }
 
 class Properties {
-  String title = 'PageTitle';
+  late RichTexts title;
 
   Properties({required this.title});
 
   Properties.fromJson(Map<String, dynamic> json) {
-    title = json['title']['title']['plain_text'];
+    title = RichTexts.fromTextList(json['title']['title']);
   }
 
   Map<String, dynamic> toJson() {

@@ -11,7 +11,7 @@ class PageAPI {
 
   PageAPI({required this.httpClient, required this.headers});
 
-  Future<Results> getPage(String pageId) async {
+  Future<Page> getPage(String pageId) async {
     final url = '${globals.baseUrl}/pages/$pageId';
     final response = await httpClient.get(Uri.parse(url), headers: headers);
 
@@ -19,6 +19,6 @@ class PageAPI {
       throw Exception('error getting the page');
     }
 
-    return Results.fromJson(jsonDecode(response.body));
+    return Page.fromJson(jsonDecode(response.body));
   }
 }

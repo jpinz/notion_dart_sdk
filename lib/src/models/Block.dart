@@ -1,11 +1,7 @@
-import 'package:logging/logging.dart';
-
 import 'ChildPage.dart';
 import 'Heading.dart';
 import 'RichText.dart';
 import 'ToDo.dart';
-
-final log = Logger('Block');
 
 class Block {
   String object = 'block';
