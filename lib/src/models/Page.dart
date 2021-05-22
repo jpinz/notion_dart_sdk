@@ -28,6 +28,10 @@ class Page {
     properties = Properties.fromJson(json['properties'], isQuery: true);
   }
 
+  String getTitle() {
+    return properties.getProperty('title')!.value.toString();
+  }
+
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
     data['object'] = object;

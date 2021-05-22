@@ -20,7 +20,7 @@ void main() {
       expect(
           await blockApi
               .getBlocks('pageId')
-              .then((value) => value.block![0].id),
+              .then((value) => value.blocks![0].id),
           'expectedFirstBlockId');
     });
   });

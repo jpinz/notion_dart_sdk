@@ -3,14 +3,14 @@ import 'package:notion_sdk/src/models/Page.dart';
 
 class Results {
   String object = 'list';
-  List<Block>? block = <Block>[];
+  List<Block>? blocks = <Block>[];
   List<Page>? page = <Page>[];
   String? nextCursor;
   bool hasMore = false;
 
   Results(
       {this.object = 'list',
-      this.block,
+      this.blocks,
       this.page,
       this.nextCursor,
       this.hasMore = false});
@@ -20,7 +20,7 @@ class Results {
     if (json['results'] != null) {
       json['results'].forEach((v) {
         if (v['object'] == 'block') {
-          block!.add(Block.fromJson(v));
+          blocks!.add(Block.fromJson(v));
         }
         if (v['object'] == 'page') {
           page!.add(Page.fromJson(v));
@@ -34,8 +34,8 @@ class Results {
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
     data['object'] = object;
-    if (block != null) {
-      data['block'] = block!.map((v) => v.toJson()).toList();
+    if (blocks != null) {
+      data['block'] = blocks!.map((v) => v.toJson()).toList();
     }
     data['next_cursor'] = nextCursor;
     data['has_more'] = hasMore;

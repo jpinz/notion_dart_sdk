@@ -54,6 +54,11 @@ class RichText {
     }
     return data;
   }
+
+  @override
+  String toString() {
+    return plainText;
+  }
 }
 
 class RichTexts {
@@ -87,6 +92,15 @@ class RichTexts {
       data['text'].add(v);
     });
     return data;
+  }
+
+  @override
+  String toString() {
+    var text = '';
+    for (var richText in richTexts) {
+      text += richText.toString();
+    }
+    return text;
   }
 }
 
