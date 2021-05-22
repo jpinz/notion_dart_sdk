@@ -9,16 +9,18 @@ import 'package:notion_sdk/src/DatabaseApi.dart';
 export 'src/models/Annotations.dart';
 export 'src/models/Block.dart';
 export 'src/models/ChildPage.dart';
+export 'src/models/Database.dart';
 export 'src/models/Heading.dart';
 export 'src/models/Mention.dart';
+export 'src/models/NotionDate.dart';
+export 'src/models/Number.dart';
 export 'src/models/Page.dart';
+export 'src/models/Properties.dart';
 export 'src/models/Results.dart';
 export 'src/models/RichText.dart';
-export 'src/models/Todo.dart';
 export 'src/models/Select.dart';
-export 'src/models/NotionDate.dart';
-export 'src/models/Database.dart';
-export 'src/models/Properties.dart';
+export 'src/models/ToDo.dart';
+export 'src/models/User.dart';
 
 class NotionClient {
   final http.Client httpClient;

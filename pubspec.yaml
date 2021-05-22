@@ -1,6 +1,6 @@
 name: notion_sdk
 description: A wrapper for Notion's SDK made for the LiteN app.
-version: 0.1.1
+version: 0.1.2
 homepage: https://liten.app
 
 environment:
@@ -11,4 +11,5 @@ dev_dependencies:
   test: ^1.14.4
 
 dependencies:
+  enum_to_string: ^2.0.1
   http: ^0.13.3
